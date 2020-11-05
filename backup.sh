@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# this is to be ran from the machine running docker
+
 # make sure to create the backups directory
 if [ ! -d backups ]; then
 	mkdir backups
@@ -12,6 +14,4 @@ echo 'save-all fluid' | sudo socat EXEC:"docker attach mc",pty STDIN
 tar -czvf backups/`date '+%Y%m%d-%H%M%S'`.tar.gz data
 echo 'save-on' | sudo socat EXEC:"docker attach mc",pty STDIN
 echo 'say Backup finished.' | sudo socat EXEC:"docker attach mc",pty STDIN
-
-# todo if there was a problem, be sure auto save is still on
 
