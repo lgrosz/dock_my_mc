@@ -2,7 +2,7 @@ FROM openjdk:17
 
 WORKDIR /usr/server
 
-COPY minecraft_server.1.17.1.jar server.jar
+COPY minecraft_server.1.18.1.jar server.jar
 
 WORKDIR /usr/server/data
 
